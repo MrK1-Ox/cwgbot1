@@ -1,4 +1,4 @@
-envconst Discord  = require('discord.js');
+const Discord  = require('discord.js');
 const bot = new Discord.Client();
 
 var prefix = ("*")
@@ -8,7 +8,7 @@ bot.on('ready', function() {
     console.log("Connected");
 });
 
-bot.login("NDM4MDY4MTIzMDcwMTAzNTUz.DcuWCw.jJjqFjgSjgF-1T3gBOOGQUME_RI");
+bot.login(procees.env.TOKEN);
 
 
 bot.on('message', message => {
@@ -16,7 +16,7 @@ bot.on('message', message => {
         message.channel.sendMessage("Liste des commandes:  \n -*help");
     }
     
-    if (message.content === "Salut""){
+    if (message.content === "Salut"){
         message.reply("Bien le bonjour. :)");
         console.log("Commande salut effectué");
     }
